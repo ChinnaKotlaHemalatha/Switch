@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.Toast;
+
+import static android.widget.Toast.LENGTH_SHORT;
+
 
 public class MainActivity extends AppCompatActivity {
 ImageView imageview;
@@ -23,8 +27,10 @@ SwitchCompat switchCompat;
             public void onClick(View v) {
                 if (switchCompat.isChecked()) {
                     imageview.setImageDrawable(getResources().getDrawable(R.drawable.images));
+                   Toast.makeText( MainActivity.this,"Power:On", LENGTH_SHORT ).show();
             } else {
             imageview.setImageDrawable(getResources().getDrawable(R.drawable.download));
+                    Toast.makeText(MainActivity.this,"Power:Off", LENGTH_SHORT).show();
         }
             }
         });
